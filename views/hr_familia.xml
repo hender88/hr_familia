@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+##############################################################################
+#
+#  2022 Henderson Zambrano RRHH <zambranohender@gmail.com>.
+#
+##############################################################################
+-->
+
+<odoo>
+
+<!-- vista tipo tree del modulo family-->
+        <record id="hr_familia_view_tree" model="ir.ui.view">
+            <field name="name">hr.familia.view.tree</field><!--nombre de la vista-->
+            <field name="model">hr.employee.familia</field><!--nombre de la modelo-->
+            <field name="arch" type="xml">
+                <tree string="Employee Children">
+                    <field name="name" string="Nombres"/>
+					<field name="apellidos"/>
+					<field name="cedula"/>
+                    <field name="date_of_birth"/>
+						<field name="edad"/>
+                </tree>
+            </field>
+        </record>
+<!-- vista tipo form del modulo carga familiar-->
+        <record id="hr_familia_view_form" model="ir.ui.view">
+            <field name="name">hr.familia.view.form</field><!--nombre de la vista-->
+            <field name="model">hr.employee.familia</field><!--nombre de la modelo-->
+            <field name="arch" type="xml">
+                <form string="Employee Children">
+                    <sheet>
+                        <group>
+						<!--campos de la vista-->
+                            <field name="name" string="Nombres"/>
+							<field name="apellidos"/>
+							<field name="cedula"/>
+                            <field name="date_of_birth"/>
+							<field name="edad"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+</odoo>

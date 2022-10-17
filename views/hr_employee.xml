@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+##############################################################################
+#
+#  2022 Henderson Zambrano RRHH <zambranohender@gmail.com>.
+#
+##############################################################################
+-->
+
+<odoo>
+    <data>
+<!--vista tipo form que se hereda en hr.view_employee_form junto con la vista tree de la clase hr.children-->
+        <record id="hr_employee_view_form" model="ir.ui.view">
+            <field name="name">hr.employee.view.form.inherit.familia</field><!--nombre de la vista-->
+            <field name="model">hr.employee</field><!--nombre de la clase-->
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='public']" position="before"> <!-- posicion donde se ubicara en la vista hr.view_employee_form"-->
+                    <page string="Carga Familiar"><!--pagina de la carga familiar-->
+                        <group>
+                            <group string="Esposo(a)">
+                                <field name="fam_spouse"/>
+								<field name="apellidos"/>
+								<field name="cedula"/> 
+                                <field name="fam_spouse_tel"/>
+                            </group>
+                            <group string="Madre">
+                                   <field name="fam_mother"/>
+								   <field name="apellidos_madre"/>
+								   <field name="cedula_madre"/>
+								   <field name="tel_madre"/>
+                               
+                            </group>
+							  <group string="Padre">
+                                <field name="fam_father"/>
+								<field name="apellidos_padre"/>
+								<field name="cedula_padre"/>
+								<field name="tel_padre"/>
+                                
+                               
+                            </group>
+                        </group>
+                        <group string="Hijos">
+                            <field name="fam_familia_ids" nolabel="1"/> <!-- se muestra la vista tipo tree de la clase hr.children-->
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
